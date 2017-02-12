@@ -1,0 +1,3 @@
+rootProject.name = 'RNDemoNirvash'
+
+include ':app'
