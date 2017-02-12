@@ -38,6 +38,8 @@
 		B65AE33CB83D4B4283B7200C /* libRNAnalytics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 752DA38ADE5741F589F3B05E /* libRNAnalytics.a */; };
 		81628B6296494F0F89032932 /* MobileCenter-Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = C57C4FDB706C418C86A84F5A /* MobileCenter-Config.plist */; };
 		0601ABDBDAFA495EA828D2AF /* libRNCrashes.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C2E48832EEB84271AB3D8D6E /* libRNCrashes.a */; };
+		B2833258EA7D451BB40A37D4 /* libCodePush.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F228F3E08C546669EF07F93 /* libCodePush.a */; };
+		698D3D8FA77F4F3BB9DCCF92 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 81AC87DB729947A4B8C6C38C /* libz.tbd */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -262,6 +264,9 @@
 		C57C4FDB706C418C86A84F5A /* MobileCenter-Config.plist */ = {isa = PBXFileReference; name = "MobileCenter-Config.plist"; path = "RNDemoNirvash/MobileCenter-Config.plist"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = text.plist.xml; explicitFileType = undefined; includeInIndex = 0; };
 		50E14583FCD648ABA40D993E /* RNCrashes.xcodeproj */ = {isa = PBXFileReference; name = "RNCrashes.xcodeproj"; path = "../node_modules/mobile-center-crashes/ios/RNCrashes.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
 		C2E48832EEB84271AB3D8D6E /* libRNCrashes.a */ = {isa = PBXFileReference; name = "libRNCrashes.a"; path = "libRNCrashes.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		0F63B0522CF94E868936A0B1 /* CodePush.xcodeproj */ = {isa = PBXFileReference; name = "CodePush.xcodeproj"; path = "../node_modules/react-native-code-push/ios/CodePush.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		0F228F3E08C546669EF07F93 /* libCodePush.a */ = {isa = PBXFileReference; name = "libCodePush.a"; path = "libCodePush.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		81AC87DB729947A4B8C6C38C /* libz.tbd */ = {isa = PBXFileReference; name = "libz.tbd"; path = "usr/lib/libz.tbd"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = sourcecode.text-based-dylib-definition; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -290,6 +295,8 @@
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
 				B65AE33CB83D4B4283B7200C /* libRNAnalytics.a in Frameworks */,
 				0601ABDBDAFA495EA828D2AF /* libRNCrashes.a in Frameworks */,
+				B2833258EA7D451BB40A37D4 /* libCodePush.a in Frameworks */,
+				698D3D8FA77F4F3BB9DCCF92 /* libz.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -458,6 +465,7 @@
 				139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */,
 				D838F8F1B1E54C7B9F406ABE /* RNAnalytics.xcodeproj */,
 				50E14583FCD648ABA40D993E /* RNCrashes.xcodeproj */,
+				0F63B0522CF94E868936A0B1 /* CodePush.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -479,6 +487,7 @@
 				00E356EF1AD99517003FC87E /* RNDemoNirvashTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				C57C4FDB706C418C86A84F5A /* MobileCenter-Config.plist */,
+				0744A81979B449979669A15F /* Frameworks */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -493,6 +502,15 @@
 				2D02E4901E0B4A5D006451C7 /* RNDemoNirvash-tvOSTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		0744A81979B449979669A15F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				81AC87DB729947A4B8C6C38C /* libz.tbd */,
+			);
+			name = Frameworks;
+			path = "";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -989,6 +1007,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 			};
 			name = Debug;
@@ -1009,6 +1028,7 @@
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RNDemoNirvash.app/RNDemoNirvash";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
@@ -1077,6 +1097,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 			};
 			name = Debug;
@@ -1108,6 +1129,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 			};
 			name = Release;
@@ -1134,6 +1156,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 			};
 			name = Debug;
@@ -1158,6 +1181,7 @@
 				TVOS_DEPLOYMENT_TARGET = 10.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);

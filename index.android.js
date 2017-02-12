@@ -15,8 +15,16 @@ import {
 
 import Analytics from 'mobile-center-analytics';
 import Crashes from 'mobile-center-crashes';
+import CodePush from 'react-native-code-push';
 
 export default class RNDemoNirvash extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      logs: []
+    }
+  }
 
   sendEvent() {
     Analytics.trackEvent('My Special weak sauce', {
@@ -41,6 +49,20 @@ export default class RNDemoNirvash extends Component {
     throw new Error("Hey buddy! Weak Sauce much?");
   }
 
+  codePushSync() {
+    CodePush.sync({
+      updateDialog: true,
+      installMode: CodePush.InstallMode.IMMEDIATE
+    }, (status) => {
+      for(var key in CodePush.SyncStatus) {
+        if (status === CodePush.SyncStatus[key]) {
+          this.setState({logs: [...this.state.logs, key.replace(/_/g, '')] });
+          break;
+        }
+      }
+    });
+  }
+
   render() {
     return (
       <View style={styles.container}>
@@ -57,6 +79,8 @@ export default class RNDemoNirvash extends Component {
         <Button title="Send Event" onPress={() => this.sendEvent()} />
         <Button title="Native Crash" onPress={() => this.nativeCrash()} />
         <Button title="JS Crash" onPress={() => this.jsCrash()} />
+        <Button title="CodePush sync" onPress={() => this.codePushSync()} />
+        {this.state.logs.map((log, i) => <Text key={i}>{log}</Text>)}
       </View>
     );
   }
