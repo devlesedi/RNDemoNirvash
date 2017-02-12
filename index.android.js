@@ -9,10 +9,38 @@ import {
   AppRegistry,
   StyleSheet,
   Text,
-  View
+  View,
+  Button
 } from 'react-native';
 
+import Analytics from 'mobile-center-analytics';
+import Crashes from 'mobile-center-crashes';
+
 export default class RNDemoNirvash extends Component {
+
+  sendEvent() {
+    Analytics.trackEvent('My Special weak sauce', {
+      prop1: 'My Custom Property',
+      timeStamp: new Date().toISOString()
+    });
+  }
+
+  nativeCrash() {
+    Crashes.generateTestCrash();
+  }
+
+  jsCrash() {
+    this.func1();
+  }
+
+  func1() {
+    this.func2();
+  }
+
+  func2() {
+    throw new Error("Hey buddy! Weak Sauce much?");
+  }
+
   render() {
     return (
       <View style={styles.container}>
@@ -26,6 +54,9 @@ export default class RNDemoNirvash extends Component {
           Double tap R on your keyboard to reload,{'\n'}
           Shake or press menu button for dev menu
         </Text>
+        <Button title="Send Event" onPress={() => this.sendEvent()} />
+        <Button title="Native Crash" onPress={() => this.nativeCrash()} />
+        <Button title="JS Crash" onPress={() => this.jsCrash()} />
       </View>
     );
   }
