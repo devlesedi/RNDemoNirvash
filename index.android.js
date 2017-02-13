@@ -13,6 +13,8 @@ import {
   Button
 } from 'react-native';
 
+import App from './app/';
+
 import Analytics from 'mobile-center-analytics';
 import Crashes from 'mobile-center-crashes';
 import CodePush from 'react-native-code-push';
@@ -73,8 +75,7 @@ export default class RNDemoNirvash extends Component {
           To get started, edit index.android.js
         </Text>
         <Text style={styles.instructions}>
-          Double tap R on your keyboard to reload,{'\n'}
-          Shake or press menu button for dev menu
+          New From Mobile Center an Code Push.
         </Text>
         <Button title="Send Event" onPress={() => this.sendEvent()} />
         <Button title="Native Crash" onPress={() => this.nativeCrash()} />
@@ -105,4 +106,4 @@ const styles = StyleSheet.create({
   },
 });
 
-AppRegistry.registerComponent('RNDemoNirvash', () => RNDemoNirvash);
+AppRegistry.registerComponent('RNDemoNirvash', () => App);
